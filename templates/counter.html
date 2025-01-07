@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Django Counter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+
+<body style="margin: 0;">
+    <div style="height: 64px;background-color: lightgrey; width: 100%; display: block; position: fixed;">
+        <h1>Word Counter</h3>
+    </div>
+    <div style="padding-top: 64px;">
+
+        <form method="POST" action="submit-counter" style="padding: 12px;">
+            {% csrf_token %}
+            <div>
+                <strong>Enter your text below,</strong>
+            </div>
+            <div>
+                <textarea name="text" rows=25 cols="100" id="text"></textarea>
+            </div>
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+        </p>
+
+    </div>
+    <div style="height: 64px;background-color: lightgrey; width: 100%; display: block; position: fixed; bottom: 0;">
+        All rights reserved 2025
+    </div>
+</body>
+
+</html>
