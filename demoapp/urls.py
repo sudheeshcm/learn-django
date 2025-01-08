@@ -8,5 +8,7 @@ urlpatterns = [
     path('submit-counter', views.submit_counter, name='submit-counter'),
     path('register', views.register, name='register'),
     path('login', views.login, name='login'),
-    path('logout', views.logout, name='logout')
+    path('logout', views.logout, name='logout'),
+    path('blogs', views.blogs, name='blogs'),
+    path('blog/<str:slug>', views.blog, name='blog')
 ]

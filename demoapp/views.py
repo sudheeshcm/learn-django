@@ -90,3 +90,19 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
+BLOGS = [
+    {'title':'Hello World', 'slug': 'hello-world'},
+    {'title':'World is a better place', 'slug': 'world-is-better'},
+    {'title':'Peace!', 'slug': 'peace'},
+    {'title':'All the best', 'slug': 'all-the-best'}
+]
+
+def blogs(request):
+    return render(request, 'blogs.html', {'blogs': BLOGS})
+
+def blog(request, slug):
+    print('slug: ', slug)
+    blog = list(filter(lambda b: b['slug'] == slug, BLOGS))[0]
+    print('blog: ', blog)
+    return render(request, 'blog.html', {'slug': slug, 'blog': blog})
