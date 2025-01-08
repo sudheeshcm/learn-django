@@ -102,6 +102,19 @@
 
         <a class="cta-btn d-none d-sm-block" href="#appointment">Make an Appointment</a>
 
+        <style>
+          .log-button {
+            order: 2;
+            padding: 12px;
+            color: grey;
+          }
+        </style>
+        {% if user.is_authenticated %}
+        <a class="log-button" href="logout">Logout</a>
+        {% else %}
+        <a class="log-button" href="login">Login</a>
+        {% endif %}
+
       </div>
 
     </div>
@@ -118,7 +131,11 @@
       <div class="container position-relative">
 
         <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+          {% if user.is_authenticated %}
+          <h2>WELCOME, {{ user.username.upper }}</h2>
+          {% else %}
           <h2>WELCOME TO MEDILAB</h2>
+          {% endif %}
           <p>We are team of talented designers making websites with Bootstrap</p>
         </div><!-- End Welcome -->
 
